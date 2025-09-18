@@ -1,0 +1,216 @@
+/* ========== General Styles ========== */
+body {
+font-family: "Segoe UI", sans-serif;
+margin: 0;
+line-height: 1.6;
+background: #fff8f0;
+color: #222;
+}
+
+h1, h2, h3, legend {
+font-weight: bold;
+margin-bottom: 0.5rem;
+color: #222;
+}
+
+a {
+text-decoration: none;
+color: #fff;
+}
+
+/* ========== Header and Navigation ========== */
+.site-header {
+background: linear-gradient(90deg, #ff6f61, #ff9966);
+color: white;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-wrap {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0.7rem 1rem;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+#logo-img {
+width: 45px;
+height: 45px;
+}
+
+.main-nav a {
+margin-left: 15px;
+padding: 8px 14px;
+border-radius: 20px;
+background: rgba(255, 255, 255, 0.2);
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover {
+background: rgba(255, 255, 255, 0.4);
+transform: scale(1.05);
+}
+
+/* ========== Banner ========== */
+.banner {
+margin-top: 75px;
+text-align: center;
+background: linear-gradient(180deg, #ffe0cc, #fff8f0);
+padding: 2rem 1rem;
+}
+
+.banner-img {
+width: 100%;
+max-height: 350px;
+object-fit: cover;
+margin-top: 1rem;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ========== Gallery ========== */
+.gallery {
+padding: 2rem 1rem;
+background: #fff3e6;
+}
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 12px;
+}
+
+.gallery-grid img {
+width: 100%;
+height: 160px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-grid img:hover {
+transform: scale(1.07);
+box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+/* ========== Intro Section ========== */
+.intro {
+padding: 2rem 1rem;
+text-align: center;
+background: #fff8f0;
+}
+
+/* ========== Registration Form ========== */
+.register {
+background: #ffffff;
+padding: 2rem 1rem;
+}
+
+form fieldset {
+margin-bottom: 1.5rem;
+border: 2px solid #ff9966;
+border-radius: 8px;
+padding: 1rem;
+background: #fffaf5;
+}
+
+form legend {
+font-size: 1.2rem;
+padding: 0 5px;
+color: #ff6f61;
+}
+
+form label {
+display: block;
+margin: 0.5rem 0 0.2rem;
+font-weight: 500;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+width: 100%;
+padding: 9px;
+margin-bottom: 0.6rem;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+width: auto;
+margin-right: 8px;
+}
+
+.form-actions {
+display: flex;
+justify-content: space-between;
+}
+
+#submit-btn {
+background: #ff6f61;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 6px;
+font-weight: bold;
+transition: background 0.3s ease;
+}
+
+#submit-btn:hover {
+background: #e65a50;
+}
+
+#reset-btn {
+background: #ffe0cc;
+border: 1px solid #ff9966;
+cursor: pointer;
+border-radius: 6px;
+}
+
+#reset-btn:hover {
+background: #ffcc99;
+}
+
+/* ========== Utilities ========== */
+.util {
+margin-bottom: 1.5rem;
+background: #fff3e6;
+padding: 1rem;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.util h3 {
+margin-top: 0.5rem;
+color: #ff6f61;
+}
+
+#bmi-result,
+#emi-result {
+font-weight: bold;
+margin-top: 0.5rem;
+color: #333;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+background: linear-gradient(90deg, #ff6f61, #ff9966);
+color: white;
+text-align: center;
+padding: 1rem;
+margin-top: 2rem;
+font-weight: 500;
+letter-spacing: 1px;
+}

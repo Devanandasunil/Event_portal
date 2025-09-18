@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TechFest - University Event Portal</title>
+<link rel="stylesheet" href="styles.css">
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<!-- Fixed horizontal navigation with logo -->
+<header class="site-header">
+<div class="nav-wrap">
+<div class="logo">
+<img src="assets/logo.jpg" alt="TechFest Logo" id="logo-img">
+<h1>TechFest 2025</h1>
+</div>
+<nav class="main-nav" aria-label="Main navigation">
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#about">About</a>
+<a href="#register">Register</a>
+</nav>
+</div>
+</header>
+
+<!-- Banner -->
+<section id="home" class="banner">
+<div class="banner-text">
+<h2>Welcome to TechFest 2025</h2>
+<p>Innovate. Build. Share. A single-day tech extravaganza.</p>
+</div>
+<img src="assets/banner.jpg" alt="Students at TechFest" class="banner-img">
+</section>
+
+<!-- Responsive gallery -->
+<section id="gallery" class="gallery">
+<h2>Gallery</h2>
+<div class="gallery-grid">
+<img src="assets/g1.jpg" alt="Gallery image 1">
+<img src="assets/g2.jpg" alt="Gallery image 2">
+<img src="assets/g3.jpg" alt="Gallery image 3">
+</div>
+</section>
+
+<!-- Introduction -->
+<section id="about" class="intro">
+<h2>About the Event</h2>
+<p>Our Department organises an annual TechFest to showcase student projects, workshops, and competitions. Open to all students across departments.</p>
+</section>
+
+<!-- Single registration form -->
+<section id="register" class="register">
+<h2>Online Registration</h2>
+<form id="registration-form" action="/serverlogic" method="post" enctype="multipart/form-data" novalidate>
+<!-- Personal details -->
+<fieldset>
+<legend>Personal Details</legend>
+
+<label for="fullname">Full name</label>
+<input type="text" id="fullname" name="fullname" required>
+
+<label for="regno">Registration number</label>
+<input type="search" id="regno" name="regno" required>
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required>
+
+<label for="phone">Phone</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10 digits" required>
+
+<label for="dob">Date of birth</label>
+<input type="date" id="dob" name="dob" required>
+
+<label for="website">Portfolio (optional)</label>
+<input type="url" id="website" name="website" placeholder="https://example.com">
+</fieldset>
+
+<!-- Event choices (radio) -->
+<fieldset>
+<legend>Event Choices</legend>
+<label><input type="radio" name="eventchoice" value="project" required> Project Showcase</label>
+<label><input type="radio" name="eventchoice" value="workshop"> Workshop</label>
+<label><input type="radio" name="eventchoice" value="hackathon"> Hackathon</label>
+</fieldset>
+
+<!-- Preferences (checkboxes >=4) -->
+<fieldset>
+<legend>Preferences</legend>
+<label><input type="checkbox" name="pref" value="networking"> Networking</label>
+<label><input type="checkbox" name="pref" value="certificates"> Certificates</label>
+<label><input type="checkbox" name="pref" value="swag"> Swag Pack</label>
+<label><input type="checkbox" name="pref" value="food"> Complimentary Food</label>
+<label><input type="checkbox" name="pref" value="mentoring"> Mentoring Session</label>
+</fieldset>
+
+<!-- File upload (photo) -->
+<fieldset>
+<legend>Photo Upload</legend>
+<label for="photo">Profile photo</label>
+<input type="file" id="photo" name="photo" accept="image/*" required>
+</fieldset>
+
+<!-- Select (>=5 options) -->
+<fieldset>
+<legend>Department</legend>
+<label for="dept">Choose your department</label>
+<select id="dept" name="dept" required>
+<option value="">-- Select --</option>
+<option>Computer Science</option>
+<option>Electronics</option>
+<option>Mechanical</option>
+<option>Civil</option>
+<option>Information Technology</option>
+<option>Biotechnology</option>
+</select>
+</fieldset>
+
+<!-- Textarea -->
+<fieldset>
+<legend>About Project / Notes</legend>
+<label for="notes">Short description</label>
+<textarea id="notes" name="notes" rows="4" maxlength="500"></textarea>
+</fieldset>
+
+
+<!-- Utilities -->
+<fieldset>
+<legend>Utilities</legend>
+
+<!-- BMI calculator (plain JavaScript) -->
+<div class="util">
+<h3>BMI Calculator</h3>
+<label for="weight">Weight (kg)</label>
+<input type="number" id="weight" name="weight" min="20" max="300" oninput="calculateBMI()">
+<label for="height">Height (cm)</label>
+<input type="number" id="height" name="height" min="50" max="250" oninput="calculateBMI()">
+<p id="bmi-result">BMI: —</p>
+</div>
+
+<!-- EMI calculator (jQuery) -->
+<div class="util">
+<h3>EMI Calculator (jQuery)</h3>
+<label for="loan-amt">Loan amount</label>
+<input type="number" id="loan-amt" name="loan_amt" min="0">
+<label for="loan-rate">Annual rate (%)</label>
+<input type="number" id="loan-rate" name="loan_rate" min="0" step="0.01">
+<label for="loan-tenure">Tenure (months)</label>
+<input type="number" id="loan-tenure" name="loan_tenure" min="1">
+<button type="button" id="emi-calc-btn">Calculate EMI</button>
+<p id="emi-result">EMI: —</p>
+</div>
+</fieldset>
+
+
+
+<!-- Account Setup -->
+<fieldset>
+<legend>Account Setup</legend>
+
+<label for="pwd">Password</label>
+<input type="password" id="pwd" name="pwd" required>
+
+<label for="cpwd">Confirm Password</label>
+<input type="password" id="cpwd" name="cpwd" required>
+</fieldset>
+
+<!-- Event Details -->
+<fieldset>
+<legend>Event Details</legend>
+
+<!-- Number input requirement -->
+<label for="event-count">Number of Events You Plan to Attend</label>
+<input type="number" id="event-count" name="eventcount" min="1" max="10" required>
+
+<!-- Search input requirement -->
+<label for="topic-search">Search Your Favorite Tech Topic</label>
+<input type="search" id="topic-search" name="topicsearch" placeholder="e.g. AI, IoT, Cloud">
+</fieldset>
+
+<!-- Progress element -->
+<fieldset>
+<legend>Progress</legend>
+<label for="form-progress">Form completion</label>
+<progress id="form-progress" value="0" max="9"></progress>
+</fieldset>
+
+<!-- Submit/reset -->
+<div class="form-actions">
+<input type="reset" id="reset-btn" value="Reset">
+<input type="submit" id="submit-btn" value="Register">
+</div>
+</form>
+</section>
+
+<footer class="site-footer">
+<p>&copy; Department TechFest 2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
